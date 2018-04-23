@@ -144,7 +144,7 @@ class Repository(object):
                 monitor = MultipartEncoderMonitor(
                     encoder, lambda monitor: bar.update_to(monitor.bytes_read)
                 )
-
+                print("request_url: {}".format(self.url))
                 resp = self.session.post(
                     self.url,
                     data=monitor,
