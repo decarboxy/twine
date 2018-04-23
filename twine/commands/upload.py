@@ -147,7 +147,7 @@ def upload(dists, repository, sign, identity, username, password, comment,
         resp = repository.upload(package)
 
         print("response code: {}".format(resp.status_code))
-        print("response body: {}".format(resp.raw.read()))
+        print("response body: {}".format(resp.content))
 
         # Bug 92. If we get a redirect we should abort because something seems
         # funky. The behaviour is not well defined and redirects being issued
